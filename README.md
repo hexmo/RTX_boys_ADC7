@@ -12,4 +12,4 @@ This project was developed as coursework for ADipIT02 - Object Oriented Design a
 # How to get started?
  1. Clone this repo.
  2. Create virtual environment on your machine
- 3. Insall all requirements using      _pip install -r requirements.txt_
+ 3. Install all requirements using      _pip install -r requirements.txt_
