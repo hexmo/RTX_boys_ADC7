@@ -10,3 +10,6 @@ This project was developed as coursework for ADipIT02 - Object Oriented Design a
 - Sandesh Dakal
 
 # How to get started?
+Markup: 1. Clone this repo.
+        2. Create virtual environment on your machine
+        3. Insall all requirements using _pip install -r requirements.txt_
