@@ -1,2 +1,9 @@
+eshop		: default django master app
+
 usermanagement	: handles login and accountcreation
-viewproduct	: 
+viewproduct	: handles product view, sorting by price
+search		: handles searching of product
+cart		: handles cart management and lets users make order
+
+productmanagement: lets store to update and add new products
+ordermanagement	:lets store to dispatch orders 
