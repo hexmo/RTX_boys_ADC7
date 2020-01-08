@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Phone Add Form</title>
+</head>
+<body>
+    <h1>Add Phones</h1>
+    <form action="save" method="POST">
+        {%csrf_token%}
+        Enter Phone Brand: <input type="text",name="Brand"><br>
+        Enter Phone Display: <input type="text",name="Display"><br>
+        Enter Phone Color: <input type="text",name="Color"><br>
+        Enter Phone Memory: <input type="text",name="Memory"><br>
+        Enter Phone Battery: <input type="text",name="Battery"><br>
+        Enter Phone Model: <input type="text",name="Model"><br>
+        Enter Phone Price: <input type="text",name="Price"><br>
+        <input type="Submit">
+    </form>
+</body>
+</html>

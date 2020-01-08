@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path,include
 from .views import *
 from viewproduct.urls import urlpatterns
+from productmanagement.urls import urlpatterns
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,5 +26,6 @@ urlpatterns = [
 ]
 #adding the urls of every apps 
 urlpatterns += [
-    path('',include('viewproduct.urls')),
+    path('view/',include('viewproduct.urls')),
+    path('',include('productmanagement.urls')),
 ]
