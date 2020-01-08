@@ -24,5 +24,5 @@ urlpatterns = [
 ]
 #adding the urls of every apps 
 urlpatterns += [
-    path('view/',include('viewproduct.urls')),
+    path('',include('viewproduct.urls')),
 ]
