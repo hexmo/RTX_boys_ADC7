@@ -43,9 +43,8 @@ INSTALLED_APPS = [
     'search',
     'usermanagement',
     'viewproduct',
-    'crispy_forms',
 ]
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -126,3 +125,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#adding a media file to store images and files retireved from forms
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

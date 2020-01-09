@@ -8,16 +8,34 @@
     <title>Phone Add Form</title>
 </head>
 <body>
-    <h1>Add Phones</h1>
-    <form action="save" method="POST">
-        {%csrf_token%}
-        ScreenSize: <input type="text" name="screen size"><br>
-        RAM: <input type="text" name="ram"><br>
-        ROM: <input type="text" name="rom"><br>
-        Color: <input type="text" name="Color"><br>
-        Battery: <input type="text" name="Battery"><br>
-        Description: <input type="text" name="Description"><br>
-        <input type="Submit">
-    </form>
+    <div style="display: inline-block; padding: 20px">
+        <div style="color:beige; border:1px solid">
+
+        </div>
+        <div >
+            <h1>Add Phones</h1>
+            <form action="addPhoneForm/save" method="POST">
+                {%csrf_token%}
+                Enter Product Name: <input type="text" name="Name"><br>
+                Enter Product Price: <input type="text" name="Price"><br>
+                Enter Product Stock Number: <input type="text" name="StockNo"><br>
+                Enter Product Release Date: <input type="date" name="Date"><br>
+                Enter Product Specs: <input type="file" name="Specification"><br>
+                <!-- Enter Product Image: <input type="image" name="Image">
+                <button type="submit">Upload</button><br> -->
+                Enter Product Brand: <input type="text" name="Brand"><br>
+                ScreenSize: <input type="text" name="screen size"><br>
+                RAM: <input type="text" name="ram"><br>
+                ROM: <input type="text" name="rom"><br>
+                Color: <input type="text" name="Color"><br>
+                Battery: <input type="text" name="Battery"><br>
+                Description: <input type="text" name="Description"><br>
+                <input type="Submit">
+                <a href="{% url 'product' %}">Back</a>
+            </form>
+        </div>
+    </div>
+    
+    
 </body>
 </html>
