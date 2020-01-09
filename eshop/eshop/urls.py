@@ -18,7 +18,8 @@ from django.urls import path,include
 from .views import *
 from viewproduct.urls import urlpatterns
 from productmanagement.urls import urlpatterns
-
+# from django.conf import settings
+# from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
