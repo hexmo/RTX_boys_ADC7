@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Product Add Form</title>
+</head>
+<body>
+    <h1>Add Products</h1>
+    <form action="save" method="POST">
+        {%csrf_token%}
+        Enter Product Name: <input type="text" name="Name"><br>
+        Enter Product Price: <input type="text" name="Price"><br>
+        Enter Prodcut Stock Number: <input type="text" name="StockNo"><br>
+        Enter Product Release Date: <input type="date" name="Date"><br>
+        Enter Product Specs: <input type="file" name="Specification"><br>
+        <!-- Enter Product Image: <input type="image" name="Image"><br> -->
+        Enter Product Brand: <input type="text" name="Brand"><br>
+        <input type="Submit">
+    </form>
+</body>
+</html>
