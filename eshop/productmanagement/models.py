@@ -3,11 +3,11 @@ from django.db import models
 # Create your models here.
 class Product(models.Model):
     name = models.CharField(max_length= 255)
-    price = models.CharField(max_length=255)
+    price = models.IntegerField()
     stockNo = models.IntegerField()
     releaseDate = models.DateField(auto_now=False)
-    specs = models.FileField()
-    # image = models.ImageField()
+    specs = models.FileField(upload_to='media/documents/')
+    image = models.ImageField(upload_to='media/images/')
     brand = models.CharField(max_length=255)
     
     def __str__(self):
@@ -30,6 +30,7 @@ class Phones(Product):
         return str(self.id)
 
 class Accessories(Product):
+    category = models.CharField(max_length=255)
     description = models.CharField(max_length=255)
     def __str__(self):
         return str(self.id)

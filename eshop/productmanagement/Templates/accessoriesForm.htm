@@ -14,16 +14,16 @@
         </div>
         <div >
             <h1>Add Accessories</h1>
-            <form action="accessoriesForm/save" method="POST">
+            <form action="accessoriesForm/save" method="POST" enctype="multipart/form-data">
                 {%csrf_token%}
                 Enter Product Name: <input type="text" name="Name"><br>
                 Enter Product Price: <input type="text" name="Price"><br>
                 Enter Product Stock Number: <input type="text" name="StockNo"><br>
                 Enter Product Release Date: <input type="date" name="Date"><br>
                 Enter Product Specs: <input type="file" name="Specification"><br>
-                <!-- Enter Product Image: <input type="image" name="Image">
-                <button type="submit">Upload</button><br> -->
+                Enter Product Image: <input type="file" name="Image" accept="image/"><br>
                 Enter Product Brand: <input type="text" name="Brand"><br>
+                Category: <input type="text" name="Category"><br>
                 Description: <input type="text" name="Description"><br>
                 <input type="Submit">
                 <a href="{% url 'product' %}">Back</a>
