@@ -36,7 +36,6 @@ def view_accessories_form(request):
 
 #save retrieved data in database
 def  save_phone_database(request):
-
     get_screenSize = request.POST['screen size']
     get_RAM = request.POST['ram']
     get_ROM = request.POST['rom']
