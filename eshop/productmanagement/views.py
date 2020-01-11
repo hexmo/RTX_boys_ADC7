@@ -88,3 +88,25 @@ def save_accessories(request):
     accessoriesObj = Accessories(description=get_description,name=get_name,price=get_price,stockNo=get_stockNo,releaseDate=get_releaseDate,brand=get_brand,category=get_category,image=uploaded_file_url2,specs=uploaded_file_url2)
     accessoriesObj.save()
     return HttpResponse("Successfully Stored !!")
+
+
+
+
+# *************************************************************************************
+# All codes created below this section are done by Ranjan KC
+def deleteProducts(request):
+    phones = Phones.objects.all()
+    accessories = Accessories.objects.all()
+    # print(phones)
+    # print(accessories)
+    params = {'products':phones}
+    return render(request,'delete.html',params)
+
+def confirmDeleteProducts(request,ID):
+    product = Phones.objects.get(id=ID)
+    if request.method == "POST":
+        product.delete()
+        return render(request,'delete.html',params)
+    else:    
+        context_varible = {'product':product}
+        return render(request,'confirmdelete.html',context_varible)
