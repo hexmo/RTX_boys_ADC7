@@ -88,3 +88,9 @@ def save_accessories(request):
     accessoriesObj = Accessories(description=get_description,name=get_name,price=get_price,stockNo=get_stockNo,releaseDate=get_releaseDate,brand=get_brand,category=get_category,image=uploaded_file_url2,specs=uploaded_file_url2)
     accessoriesObj.save()
     return HttpResponse("Successfully Stored !!")
+
+
+
+
+# ******************************************
+# All codes created below this section are done by Ranjan KC
