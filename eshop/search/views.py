@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from productmanagement.models import Product, Phones, Accessories
-
+from django.template import Template,context
+from productmanagement.models import Phones,Accessories
 # Create your views here.
 
 def view_search(request):
