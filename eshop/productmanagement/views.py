@@ -92,7 +92,7 @@ def save_accessories(request):
 
 
 
-# ******************************************
+# *************************************************************************************
 # All codes created below this section are done by Ranjan KC
 def deleteProducts(request):
     phones = Phones.objects.all()
