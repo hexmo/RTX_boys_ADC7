@@ -1,0 +1,20 @@
+{% extends 'viewproduct/basic.html' %}
+<!-- title -->
+{% block title%}eshop{% endblock %}
+<!-- start of body -->
+{% block main-page %}
+
+<div class="card" style="width: 18rem; margin: 10px;">
+    <img src="{{product.image.url}}" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{product.name}}</h5>
+
+        <p class="card-text"><b>NRs:{{product.price}}</b></b>
+        </p>
+        <a href="#" class="btn btn-dark">View Product</a>
+    </div>
+</div>
+
+
+
+{% endblock %}
