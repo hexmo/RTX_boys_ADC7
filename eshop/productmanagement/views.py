@@ -94,3 +94,10 @@ def save_accessories(request):
 
 # ******************************************
 # All codes created below this section are done by Ranjan KC
+def deleteProducts(request):
+    phones = Phones.objects.all()
+    accessories = Accessories.objects.all()
+    # print(phones)
+    # print(accessories)
+    params = {'products':phones}
+    return render(request,'delete.html',params)

@@ -10,4 +10,5 @@ urlpatterns = [
     path('manageProduct/addPhoneForm/save',save_phone_database),
     path('manageProduct/accessoriesForm',view_accessories_form, name='accessories'),
     path('manageProduct/accessoriesForm/save',save_accessories),
+    path('manageProduct/delete',deleteProducts,name='deleteProducts'),
 ]

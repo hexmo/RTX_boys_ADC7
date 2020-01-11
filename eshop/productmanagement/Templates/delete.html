@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<!-- display all products -->
+<div class="main-container">
+
+</div>
+{% for product in products %}
+<div class="product-container">
+    <div class="image-container">
+        <img src="{{product.image.url}}" class="card-img-top" alt="...">
+    </div>
+    <div class="detail-container">
+        <h2>{{product.name}}</h2>
+        <b>NRs:{{product.price}}</b>
+        <a href="view/{{product.id}}" class="btn btn-">Delete</a>
+
+    </div>
+
+</div>
+{% empty %} There are no products availble. {% endfor %}
+
+<body>
+
+</body>
+
+</html>
