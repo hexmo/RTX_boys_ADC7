@@ -24,13 +24,13 @@ class Phones(Product):
     RAM = models.CharField(max_length=255)
     ROM = models.CharField(max_length=255)
     battery = models.CharField(max_length=60)
-    description = models.CharField(max_length=255) 
+    description = models.TextField() 
 
     def __str__(self):
-        return str(self.id)
+        return str(self.id)+' '+self.name
 
 class Accessories(Product):
     category = models.CharField(max_length=255)
-    description = models.CharField(max_length=255)
+    description = models.TextField()
     def __str__(self):
-        return str(self.id)
+        return str(self.id)+' '+self.name

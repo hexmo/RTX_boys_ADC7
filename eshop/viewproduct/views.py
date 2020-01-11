@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import Template,context
+from productmanagement.models import Phones,Accessories
 # Create your views here.
 
 # homepage
