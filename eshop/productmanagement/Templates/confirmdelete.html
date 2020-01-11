@@ -15,38 +15,36 @@
 </head>
 
 <!-- display all products -->
-<div class="main-container">
-    {% for product in products %}
-    <div class="product-container">
-        <div class="image-container">
-            <img src="{{product.image.url}}" class="card-img-top" alt="...">
-        </div>
-        <div class="detail-container">
-            <h3>{{product.name}}</h3>
-            <b>NRs:{{product.price}}</b><br><br>
-            <a href="confirmdelete/{{product.id}}" class="btn btn-danger">Delete</a><br>
-
-        </div>
-
+{%csrf_token%}
+<div class="product-container">
+    <div class="image-container">
+        <img src="{{product.image.url}}" class="card-img-top" alt="...">
     </div>
-    {% empty %} There are no products availble. {% endfor %}
+    <div class="detail-container">
+        <h3>{{product.name}}</h3>
+        <b>NRs:{{product.price}}</b><br><br>
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <a href="/manageProduct/delete" class="btn btn-success">Cancel Deletion</a>
+
+            <form action="delete" method="POST">
+                <input class="btn btn-danger" type="submit" value="Confirm Deletion">
+            </form>
+        </div>
+        <!-- <a href="view/{{product.id}}" class="btn btn-danger">Confirm Deletion</a> -->
+    </div>
+
 </div>
 
 <style>
-    .main-container {
-        margin: 10px 100px;
-    }
-    
     .product-container {
         display: flex;
-        border: 1px solid gray;
-        margin: 10px 0;
-        padding: 15px 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     
     .image-container img {
-        width: 100px;
-        margin: 0 50px;
+        width: 100%;
     }
 </style>
 <!-- Optional JavaScript -->

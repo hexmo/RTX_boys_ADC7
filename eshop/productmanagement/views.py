@@ -101,3 +101,12 @@ def deleteProducts(request):
     # print(accessories)
     params = {'products':phones}
     return render(request,'delete.html',params)
+
+def confirmDeleteProducts(request,ID):
+    product = Phones.objects.get(id=ID)
+    if request.method == "POST":
+        product.delete()
+        return render(request,'delete.html',params)
+    else:    
+        context_varible = {'product':product}
+        return render(request,'confirmdelete.html',context_varible)
