@@ -8,9 +8,16 @@ from productmanagement.models import Phones,Accessories
 def homepage(request):
     phones = Phones.objects.all()
     accessories = Accessories.objects.all()
-    print(phones)
-    print(accessories)
-    return render(request,'viewproduct/home.html')
+    # print(phones)
+    # print(accessories)
+    params = {'products':phones}
+    return render(request,'viewproduct/home.html',params)
+
+# displaying specific product
+def view_flightdata_updateform(request,ID):
+    product = Phones.objects.get(id=ID)
+    context_varible = {'product':product}
+    return render(request,'viewproduct/view.html',context_varible)
 
 
 # def seePhones(request):
