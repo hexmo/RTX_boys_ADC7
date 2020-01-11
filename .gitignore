@@ -6,12 +6,6 @@ eshop/.vscode/settings.json
 __pycache__/
 local_settings.py
 eshop/eshop/__pycache__/settings.cpython-37.pyc
-eshop/eshop/__pycache__/settings.cpython-37.pyc
-*.pyc
-eshop/eshop/__pycache__/settings.cpython-37.pyc
 */*/*/__pycache__/
 */*/__pycache__/
 */__pycache__/
-*.log
-*.pot
-*.pyc
