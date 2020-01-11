@@ -29,7 +29,6 @@ urlpatterns = [
 urlpatterns += [
     path('view/',include('viewproduct.urls')),
     path('',include('productmanagement.urls')),
-    # path('',include('search.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # if settings.DEBUG:
