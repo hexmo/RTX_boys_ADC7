@@ -14,7 +14,7 @@ def homepage(request):
     return render(request,'viewproduct/home.html',params)
 
 # displaying specific product
-def view_flightdata_updateform(request,ID):
+def viewProductDetails(request,ID):
     product = Phones.objects.get(id=ID)
     context_varible = {'product':product}
     return render(request,'viewproduct/view.html',context_varible)
