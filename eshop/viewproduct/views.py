@@ -6,6 +6,10 @@ from productmanagement.models import Phones,Accessories
 
 # homepage
 def homepage(request):
+    phones = Phones.objects.all()
+    accessories = Accessories.objects.all()
+    print(phones)
+    print(accessories)
     return render(request,'viewproduct/home.html')
 
 
