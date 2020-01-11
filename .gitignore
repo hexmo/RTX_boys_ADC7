@@ -1,4 +1,8 @@
 eshop/.vscode/settings.json
 eshop/eshop/__pycache__/settings.cpython-37.pyc
-*.pyc
+*/*/*/__pycache__/
+*/*/__pycache__/
+*/__pycache__/
+*.log
+*.pot
 *.pyc
