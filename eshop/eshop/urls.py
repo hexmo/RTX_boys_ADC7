@@ -23,11 +23,10 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',HomeMessage),
 ]
 #adding the urls of every apps 
 urlpatterns += [
-    path('view/',include('viewproduct.urls')),
+    path('',include('viewproduct.urls')),
     path('',include('productmanagement.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
