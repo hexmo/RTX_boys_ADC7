@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,17 +8,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Manage Products</title>
 </head>
+
 <body>
     <div style="text-align: center; ">
-        <h1>Manage Product</h1></div>
-        <p>Welcome to the page. Here You can add, update or delete the products in the database.</p>
+        <h1>Manage Product</h1>
+    </div>
+    <p>Welcome to the page. Here You can add, update or delete the products in the database.</p>
     <div style="padding:100px;height:60%;">
         <a href="{% url 'phone' %}" target="_self" style="text-decoration: none; font-size:25px;color:black;border: 1px solid;">ADD PHONE</a>
     </div>
     <div style="padding:100px;height:60%;">
         <a href="{% url 'accessories' %}" target="_self" style="text-decoration: none; font-size:25px;color:black;border: 1px solid;">ADD ACCESSORIES</a>
     </div>
+    <div style="padding:100px;height:60%;">
+        <a href="{% url 'deleteProducts' %}" target="_self" style="text-decoration: none; font-size:25px;color:black;border: 1px solid;">DELETE PRODUCTS</a>
+    </div>
 </body>
-</html>  
 
-
+</html>
