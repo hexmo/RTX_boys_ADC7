@@ -10,71 +10,19 @@
 </head>
 
 <body>
-
-    <!-- navbar of ESHOP -->
-    <div class="navbar navbar-dark bg-dark" >
-        <a class="navbar-brand" href="#" >ESHOP ADMIN</a>
-
+    <div style="text-align: center; ">
+        <h1>Manage Product</h1>
     </div>
-    <!-- main body of the page -->
-    <div style="text-align: center;" >
-        <h1 class="display-4">Manage Product</h1>
-        <p>Welcome to the page. Here You can add, update or delete the products in the database.</p>
-        <div class="row justify-content-center">
-            <div class="form-row">
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                            <div class="form-group col-md-6">
-                                <a href="{% url 'phone' %}" target="_self" class="btn btn-primary">ADD PHONE</a>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <form action="phoneUpdate/edit" method="GET">
-                                    <label for="">EnterID:</label>
-                                    <input type="number" name="phone_id">
-                                    <button type="submit" class="btn btn-secondary">Edit This</button>
-                            
-                                </form>                                
-                            </div>
-                            <div class="form-group col-md-6">
-                                <a href="" class="btn btn-primary">DELETE PHONE</a>
-                            </div>
-
-                            
-                    </div>
-                    
-                </div>
-            
-            
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <div class="form-group col-md-6">
-                            <a href="{% url 'accessories' %}" target="_self" class="btn btn-secondary">ADD ACCESSORIES</a>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <form action="accessoriesUpdate/edit" method="GET">
-                                <label for="">EnterID:</label>
-                                <input type="number" name="acc_id">
-                                <button type="submit" class="btn btn-secondary">Edit This</button>
-                        
-                            </form>
-                            
-                        </div>
-                        <div class="form-group col-md-6">
-                            <a href="{% url 'deleteProducts' %}" target="_self" class="btn btn-secondary">DELETE PRODUCTS</a>
-                        </div>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-        
+    <p>Welcome to the page. Here You can add, update or delete the products in the database.</p>
+    <div style="padding:100px;height:60%;">
+        <a href="{% url 'phone' %}" target="_self" style="text-decoration: none; font-size:25px;color:black;border: 1px solid;">ADD PHONE</a>
     </div>
-        
-        
-    
-    
-    
+    <div style="padding:100px;height:60%;">
+        <a href="{% url 'accessories' %}" target="_self" style="text-decoration: none; font-size:25px;color:black;border: 1px solid;">ADD ACCESSORIES</a>
+    </div>
+    <div style="padding:100px;height:60%;">
+        <a href="{% url 'deleteProducts' %}" target="_self" style="text-decoration: none; font-size:25px;color:black;border: 1px solid;">DELETE PRODUCTS</a>
+    </div>
 </body>
 
 </html>
