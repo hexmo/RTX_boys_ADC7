@@ -12,26 +12,61 @@ from django.core.files.storage import FileSystemStorage
 def view_manage_page(request):
     return render(request,'manageProduct.htm')
 
+#this display the form to add phone
 def view_phone_form(request):
     return render(request,'addPhoneForm.htm')
 
+#this display the form for accessories
 def view_accessories_form(request):
     return render(request,'accessoriesForm.htm')
 
-# def save_product_database(request):
-#     get_name = request.POST['Name']
-#     get_price = request.POST['Price']
-#     get_stockNo = request.POST['StockNo']
-#     get_releaseDate = request.POST['Date']
-#     get_specs = request.POST['Specification']
-#     # get_image = request.POST['Image']
-#     get_brand = request.POST['Brand']
+# def view_phone_update(request):
+#     if request.method=="POST":
+#         get_id = request.POST
+#         phoneObj=Phone.objects.get(id=get_id)
+#         contxt_var={
+#             "phone":phoneObj
+#         }
+#     else:    
+#         return render(request, 'updateForms/phoneUpdate.htm', contxt_var)
 
-#     productObj = Product(name=get_name,price=get_price,stockNo=get_stockNo,releaseDate=get_releaseDate,specs=get_specs,brand=get_brand)
-#     productObj.save()
-#     return HttpResponse("Successful")
-
-
+#To get the inserted number and create context variable and pass to another form
+def get_acc_id(request):
+    access_id = request.GET['acc_id']
+    # print(access_id)
+    accObj = Accessories.objects.get(id=access_id)
+    context={
+        'acc':accObj
+    }
+    return render(request,'updateForms/accessoriesUpdate.htm',context)
+#function to update the accessories
+def update_accessories(request,id):
+    name=request.POST['Name']
+    brand=request.POST['Brand']
+    price=request.POST['Price']
+    stockNo=request.POST['StockNo']
+    date=request.POST['Date']
+    description = request.POST['Description']
+    category = request.POST['Category']
+# update queries
+    updateAccessories = Accessories.objects.get(id=id)
+    updateAccessories.name=name
+    updateAccessories.brand=brand
+    updateAccessories.price=price
+    updateAccessories.stockNo=stockNo
+    updateAccessories.date=date
+    updateAccessories.description=description
+    updateAccessories.category=category
+    # if request.method == 'POST' and (request.FILES['Image'] or request.FILES['Specification']):
+    #     image=request.FILES['Image']
+    #     specs=request.FILES['Specification']
+    #     fs2 = FileSystemStorage()
+    #     filename = fs2.save(image.name, updateAccessories.image)
+    #     uploaded_file_url2 = fs2.url(filename)
+    #     filename2 = fs2.save(specs.name,updateAccessories.specs)
+    #     uploaded_file_url2 = fs2.url(filename2)
+    updateAccessories.save()
+    return HttpResponse("Successfully Updated !!")
 
 
 #save retrieved data in database
@@ -46,8 +81,6 @@ def  save_phone_database(request):
     get_price = request.POST['Price']
     get_stockNo = request.POST['StockNo']
     get_releaseDate = request.POST['Date']
-    #get_specs = request.FILES['Specification']
-    #get_image = request.FILES['Image']
     get_brand = request.POST['Brand']
         
     
@@ -65,13 +98,12 @@ def  save_phone_database(request):
     phoneObj.save()
     return HttpResponse("Successfully Stored !!")
 
+#save added accessories
 def save_accessories(request):
     get_name = request.POST['Name']
     get_price = request.POST['Price']
     get_stockNo = request.POST['StockNo']
     get_releaseDate = request.POST['Date']
-    # get_specs = request.POST['Specification']
-    # get_image = request.FILES['Image']
     get_brand = request.POST['Brand']
     get_description = request.POST['Description']
     get_category = request.POST['Category']

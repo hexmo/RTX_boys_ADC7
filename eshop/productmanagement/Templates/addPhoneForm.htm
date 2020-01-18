@@ -8,14 +8,14 @@
     <title>Phone Add Form</title>
 </head>
 <body>
-    <div class=".navbar-brand" style="font-size:30px; border:1px solid; background-color:darkolivegreen">
-        <a class="row justify-content-center" href="#" style="text-decoration: none;color:black;">ESHOP ADMIN PAGE</a>
+    <!-- navbar ESHOP -->
+    <div class="navbar navbar-dark bg-dark" >
+        <a class="navbar-brand" href="#" >ESHOP</a>
     </div>
-    
-    
+    <!-- main display for form -->
     <div class="row justify-content-center">
         <div>
-            <div><h1>Add Phones</h1></div>
+            <div><h1 class="display-4">Add Phones</h1></div>
             <div class="form-group">
                 <form action="addPhoneForm/save" method="POST" enctype="multipart/form-data">
                     {%csrf_token%}
