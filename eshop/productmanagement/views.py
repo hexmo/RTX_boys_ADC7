@@ -134,11 +134,5 @@ def deleteProducts(request):
 
 def confirmDeleteProducts(request,ID):
     product = Phones.objects.get(id=ID)
-    if request.method == "POST":
-        product_id = request.POST.get['id']
-        print(product_id)
-        product.delete()
-        return render(request,'delete.html',params)
-    else:    
-        context_varible = {'product':product}
-        return render(request,'confirmdelete.html',context_varible)
+    product.delete()
+    return HttpResponse("Successfully Deleted !!")
