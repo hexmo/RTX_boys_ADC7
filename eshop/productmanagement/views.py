@@ -129,14 +129,14 @@ def save_accessories(request):
 def deleteProducts(request):
     phones = Phones.objects.all()
     accessories = Accessories.objects.all()
-    # print(phones)
-    # print(accessories)
     params = {'products':phones}
     return render(request,'delete.html',params)
 
 def confirmDeleteProducts(request,ID):
     product = Phones.objects.get(id=ID)
     if request.method == "POST":
+        product_id = request.POST.get['id']
+        print(product_id)
         product.delete()
         return render(request,'delete.html',params)
     else:    

@@ -27,7 +27,8 @@
             <a href="/manageProduct/delete" class="btn btn-success">Cancel Deletion</a>
 
             <form action="delete" method="POST">
-                <input class="btn btn-danger" type="submit" value="Confirm Deletion">
+                {% csrf_token %}
+                <input class="btn btn-danger" name="id" type="submit" value="{{product.id}}">
             </form>
         </div>
         <!-- <a href="view/{{product.id}}" class="btn btn-danger">Confirm Deletion</a> -->
